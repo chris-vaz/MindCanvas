@@ -4,7 +4,7 @@ import { CONNREFUSED } from 'dns';
 dotenv.config({ path: '.env' });
 
 if (!process.env.DATABASE_URL) {
-    console.log('Cannot find Database URL');
+    console.log('🔴 Cannot find Database URL');
 }
 
 export default {
