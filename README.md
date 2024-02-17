@@ -16,4 +16,3 @@
 
 **Let's create something extraordinary, together.**
 
-// TODO: Check .env files for updates 
