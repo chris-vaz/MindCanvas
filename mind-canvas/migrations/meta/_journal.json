@@ -15,6 +15,13 @@
       "when": 1708173145858,
       "tag": "0001_yielding_galactus",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1709465383381,
+      "tag": "0002_icy_zodiak",
+      "breakpoints": true
     }
   ]
 }
