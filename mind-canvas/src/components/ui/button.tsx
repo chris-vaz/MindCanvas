@@ -62,16 +62,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         },
         ref
     ) => {
-        const Comp = asChild ? Slot : 'button';
-        if (asChild) {
-            return (
-                <Slot
-                    className={cn(buttonVariants({ variant, size, className }))}
-                    ref={ref}
-                    {...props}
-                ></Slot>
-            );
-        }
+        // const Comp = asChild ? Slot : 'button';
+        // if (asChild) {
+        //     return (
+        //         <Slot
+        //             className={cn(buttonVariants({ variant, size, className }))}
+        //             ref={ref}
+        //             {...props}
+        //         ></Slot>
+        //     );
+        // }
 
         return (
             <button
