@@ -1,5 +1,6 @@
 import TitleSection from '@/components/landing-page/title-section'
 import React from 'react'
+import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
     return (
@@ -17,6 +18,29 @@ const HomePage = () => {
                     pill="✨ Your Workspace, Perfected"
                     title="All-In-One Collaboration and Productivity Platform"
                 />
+            </div>
+            <div
+                className="bg-white
+          p-[2px]
+          mt-6
+          rounded-xl
+          bg-gradient-to-r
+          from-primary
+          to-brand-primaryBlue
+          sm:w-[300px]
+        "
+            >
+                <Button
+                    variant="btn-secondary"
+                    className=" w-full
+            rounded-[10px]
+            p-6
+            text-2xl
+            bg-background
+          "
+                >
+                    Get Cypress Free
+                </Button>
             </div>
         </section>
     )
