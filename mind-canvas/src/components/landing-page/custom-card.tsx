@@ -9,6 +9,8 @@ type CustomCardProps = CardProps & {
     cardFooter?: React.ReactNode;
 };
 
+// Custom Card Component
+
 const CustomCard: React.FC<CustomCardProps> = ({
     className,
     cardHeader,
