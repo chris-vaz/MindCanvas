@@ -6,6 +6,8 @@ interface TitleSectionProps {
     pill: string;
 }
 
+// Title Section Component
+
 const TitleSection: React.FC<TitleSectionProps> = ({ title, subheading, pill }) => {
     return (
         <React.Fragment>
