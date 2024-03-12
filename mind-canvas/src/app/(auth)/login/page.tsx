@@ -8,10 +8,11 @@ import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { FormSchema } from '@/lib/types';
-import { Form } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem } from '@/components/ui/form';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../../../public/cypresslogo.svg'
+import { Input } from 'postcss';
 
 const LoginPage = () => {
     const router = useRouter();
@@ -52,8 +53,16 @@ const LoginPage = () => {
                 className='w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-column'>
                 <Link href="/" className='w-full flex justify-left items-center'>
                     <Image src={Logo} alt="MindCanvas Logo" width={50} height={50} />
+                    <span className='font-semibold text-4xl first-letter:ml-2'>Mind Canvas</span>
                 </Link>
-                <span className='font-semibold text-4xl first-letter:ml-2'>Mind Canvas </span>
+                <FormDescription className='text-foreground/60 '></FormDescription>
+                <FormField>
+                    <FormItem>
+                        <FormControl>
+                            <Input></Input>
+                        </FormControl>
+                    </FormItem>
+                </FormField>
             </form>
         </Form>
     )
