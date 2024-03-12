@@ -53,6 +53,7 @@ const LoginPage = () => {
                 <Link href="/" className='w-full flex justify-left items-center'>
                     <Image src={Logo} alt="MindCanvas Logo" width={50} height={50} />
                 </Link>
+                <span className='font-semibold text-4xl first-letter:ml-2'>Mind Canvas </span>
             </form>
         </Form>
     )
