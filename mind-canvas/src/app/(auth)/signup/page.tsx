@@ -80,8 +80,6 @@ const Signup = () => {
         setConfirmation(true);
     };
 
-    const signUpHandler = () => { };
-
     return (
         <Form {...form}>
             <form
