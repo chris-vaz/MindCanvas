@@ -19,9 +19,8 @@ import Logo from '../../../../public/cypresslogo.svg';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Loader from '@/components/global/Loader';
-import { actionLoginUser } from '@/lib/server-actions/auth-actions';
 // import { Separator } from '@/components/ui/separator';
-// import { actionLoginUser } from '@/lib/server-actions/auth-actions';
+import { actionLoginUser } from '@/lib/server-actions/auth-actions';
 
 const LoginPage = () => {
     const router = useRouter();
@@ -35,16 +34,16 @@ const LoginPage = () => {
 
     const isLoading = form.formState.isSubmitting;
 
-      const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (
+    const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (
         formData
-      ) => {
+    ) => {
         const { error } = await actionLoginUser(formData);
         if (error) {
-          form.reset();
-          setSubmitError(error.message);
+            form.reset();
+            setSubmitError(error.message);
         }
         router.replace('/dashboard');
-      };
+    };
 
     return (
         <Form {...form}>
@@ -52,13 +51,10 @@ const LoginPage = () => {
                 onChange={() => {
                     if (submitError) setSubmitError('');
                 }}
-                // onSubmit={form.handleSubmit(onSubmit)}
-                className="w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-col">
-                <Link href="/" className="
-                w-fullv
-                flex
-                justify-left
-                items-center">
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-col"
+            >
+                <Link href="/" className="w-full flex justify-left items-center">
                     <Image src={Logo} alt="Mind Canvas Logo" width={50} height={50} />
                     <span className="font-semibold dark:text-white text-4xl first-letter:ml-2">
                         Mind Canvas.
@@ -67,10 +63,7 @@ const LoginPage = () => {
                 <FormDescription className="text-foreground/60">
                     An all-In-One Collaboration and Productivity Platform
                 </FormDescription>
-                <FormField
-                    disabled={isLoading}
-                    control={form.control}
-                    name="email"
+                <FormField disabled={isLoading} control={form.control} name="email"
                     render={({ field }) => (
                         <FormItem>
                             <FormControl>
@@ -84,10 +77,7 @@ const LoginPage = () => {
                         </FormItem>
                     )}
                 />
-                <FormField
-                    disabled={isLoading}
-                    control={form.control}
-                    name="password"
+                <FormField disabled={isLoading} control={form.control} name="password"
                     render={({ field }) => (
                         <FormItem>
                             <FormControl>
@@ -102,11 +92,7 @@ const LoginPage = () => {
                     )}
                 />
                 {submitError && <FormMessage>{submitError}</FormMessage>}
-                <Button
-                    type="submit"
-                    className="w-full p-6"
-                    size="lg"
-                    disabled={isLoading}>
+                <Button type="submit" className="w-full p-6" size="lg" disabled={isLoading}>
                     {!isLoading ? 'Login' : <Loader />}
                 </Button>
                 <span className="self-container">
