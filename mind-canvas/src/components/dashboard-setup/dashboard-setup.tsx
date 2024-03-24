@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '../ui/card';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import EmojiPicker from '../global/emoji-picker';
 import { Label } from '../ui/label';
 import { Input } from '../ui/input';
@@ -25,6 +26,13 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
 }) => {
 
   const [selectedEmoji, setSelectedEmoji] = useState('');
+  const { register, handleSubmit, reset, formState:{isSubmitting:isLoading,errors} } = useForm<FieldValues>({
+    mode: 'onChange',
+    defaultValues: {
+      logo: '',
+      workspaceName: '',
+    }
+  });
 
   return (
     <Card className="w-[800px] h-screen sm:h-auto">
