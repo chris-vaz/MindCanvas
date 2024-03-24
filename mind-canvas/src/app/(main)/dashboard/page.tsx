@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 
@@ -7,8 +6,6 @@ import db from '@/lib/supabase/db';
 import { redirect } from 'next/navigation';
 import DashboardSetup from '@/components/dashboard-setup/dashboard-setup';
 import { getUserSubscriptionStatus } from '@/lib/supabase/queries';
-// import DashboardSetup from '@/components/dashboard-setup/dashboard-setup';
-// import { getUserSubscriptionStatus } from '@/lib/supabase/queries';
 
 const DashboardPage = async () => {
     // Creates a Supabase client instance specifically for Server Components, using the cookies object to potentially include authentication information.
@@ -26,8 +23,7 @@ const DashboardPage = async () => {
         where: (workspace, { eq }) => eq(workspace.workspaceOwner, user.id),
     });
 
-    const { data: subscription, error: subscriptionError } =
-        await getUserSubscriptionStatus(user.id);
+    const { data: subscription, error: subscriptionError } = await getUserSubscriptionStatus(user.id);
 
     // If an error occurred while fetching the subscription status, the function exits without rendering anything.
     if (subscriptionError) return;
