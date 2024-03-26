@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS "workspaces" (
 	"workspace_owner" uuid NOT NULL,
 	"title" text NOT NULL,
 	"icon_id" text NOT NULL,
+	"data" text,
 	"in_trash" text,
 	"logo" text,
 	"banner_url" text
