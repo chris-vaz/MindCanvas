@@ -34,8 +34,8 @@ export default function RootLayout({
           <AppStateProvider>
             <SupabaseUserProvider>
               {/* <SocketProvider> */}
-                {children}
-                <Toaster />
+              {children}
+              <Toaster />
               {/* </SocketProvider> */}
             </SupabaseUserProvider>
           </AppStateProvider>
