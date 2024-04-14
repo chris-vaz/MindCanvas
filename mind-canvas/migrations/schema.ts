@@ -191,6 +191,16 @@ export const folders = pgTable('folders', {
 	bannerUrl: text('banner_url'),
 });
 
+export const users = pgTable("users", {
+	id: uuid("id").primaryKey().notNull(),
+	fullName: text("full_name"),
+	avatarUrl: text("avatar_url"),
+	billingAddress: jsonb("billing_address"),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }),
+	paymentMethod: jsonb("payment_method"),
+	email: text("email"),
+});
+
 export const files = pgTable('files', {
 	id: uuid('id').defaultRandom().primaryKey().notNull(),
 	folderId: uuid('folder_id')
